@@ -14,7 +14,135 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      glossary_terms: {
+        Row: {
+          created_at: string
+          id: string
+          language_pair: string
+          source_term: string
+          target_term: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          language_pair: string
+          source_term: string
+          target_term: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          language_pair?: string
+          source_term?: string
+          target_term?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      translations: {
+        Row: {
+          confidence_score: number | null
+          created_at: string
+          domain: string | null
+          formality_level: number | null
+          id: string
+          input_type: string
+          intent_detected: string | null
+          is_saved: boolean | null
+          register_detected: string | null
+          session_id: string | null
+          source_file_name: string | null
+          source_language: string
+          source_text: string
+          target_language: string
+          tone_detected: string | null
+          translated_text: string
+          translator_notes: string | null
+          user_id: string | null
+        }
+        Insert: {
+          confidence_score?: number | null
+          created_at?: string
+          domain?: string | null
+          formality_level?: number | null
+          id?: string
+          input_type?: string
+          intent_detected?: string | null
+          is_saved?: boolean | null
+          register_detected?: string | null
+          session_id?: string | null
+          source_file_name?: string | null
+          source_language: string
+          source_text: string
+          target_language: string
+          tone_detected?: string | null
+          translated_text: string
+          translator_notes?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          confidence_score?: number | null
+          created_at?: string
+          domain?: string | null
+          formality_level?: number | null
+          id?: string
+          input_type?: string
+          intent_detected?: string | null
+          is_saved?: boolean | null
+          register_detected?: string | null
+          session_id?: string | null
+          source_file_name?: string | null
+          source_language?: string
+          source_text?: string
+          target_language?: string
+          tone_detected?: string | null
+          translated_text?: string
+          translator_notes?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      user_settings: {
+        Row: {
+          api_key_encrypted: string | null
+          default_domain: string | null
+          default_formality: number | null
+          default_source_lang: string | null
+          default_target_lang: string | null
+          font_size: string | null
+          llm_provider: string | null
+          theme: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          api_key_encrypted?: string | null
+          default_domain?: string | null
+          default_formality?: number | null
+          default_source_lang?: string | null
+          default_target_lang?: string | null
+          font_size?: string | null
+          llm_provider?: string | null
+          theme?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          api_key_encrypted?: string | null
+          default_domain?: string | null
+          default_formality?: number | null
+          default_source_lang?: string | null
+          default_target_lang?: string | null
+          font_size?: string | null
+          llm_provider?: string | null
+          theme?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
